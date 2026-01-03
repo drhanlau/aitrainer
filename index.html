@@ -247,19 +247,6 @@
             left: 0%;
         }
     }
-    
-    /* --- CTA Pulse Animation --- */
-    @keyframes pulse-light {
-      0%, 100% {
-        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); /* amber-500 with opacity */
-      }
-      50% {
-        box-shadow: 0 0 0 12px rgba(245, 158, 11, 0);
-      }
-    }
-    .cta-pulse {
-      animation: pulse-light 2.5s infinite;
-    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -272,13 +259,26 @@
               <img src="https://thelead.io/wp-content/uploads/2019/11/lead-white-logo.png" alt="theLead.io Logo" class="h-8 w-auto">
             </a>
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-6">
+            <div class="hidden md:flex items-center space-x-6 h-16">
                 <a href="#program-structure" class="hover:text-amber-300 transition-colors">Program Structure</a>
                 <a href="#curriculum" class="hover:text-amber-300 transition-colors">Curriculum</a>
                 <a href="#trainers" class="hover:text-amber-300 transition-colors">Trainers</a>
                 <a href="#faq" class="hover:text-amber-300 transition-colors">FAQ</a>
-                <!-- IMPROVED NAV CTA -->
-                <a id="reg-link-nav-desktop" href="https://forms.gle/iezwx7m8ZKWaCaZb7" target="_blank" rel="noopener noreferrer" class="bg-gradient-yellow hover:shadow-lg text-gray-900 px-5 py-2 rounded-md font-semibold transition-all transform hover:-translate-y-0.5">Book Your Seat</a>
+                
+                <!-- Dropdown Menu -->
+                <div class="relative dropdown group h-full flex items-center">
+                    <button class="flex items-center hover:text-amber-300 transition-colors focus:outline-none py-4">
+                        More Programs <i data-lucide="chevron-down" class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="dropdown-menu hidden group-hover:block absolute left-0 top-full bg-white text-gray-800 rounded-lg shadow-xl py-2 w-56 border border-gray-100 z-50">
+                        <a href="http://n8n.thelead.io/" target="_blank" class="block px-4 py-2 hover:bg-gray-50 hover:text-blue-600 transition-colors">AI Agentic Automation</a>
+                        <a href="https://vibecoding.thelead.io/" target="_blank" class="block px-4 py-2 hover:bg-gray-50 hover:text-blue-600 transition-colors">AI Vibe Coding</a>
+                        <a href="https://aiengineering.thelead.io/" target="_blank" class="block px-4 py-2 hover:bg-gray-50 hover:text-blue-600 transition-colors">AI Engineering</a>
+                        <a href="http://aitrainer.thelead.io/" target="_blank" class="block px-4 py-2 hover:bg-gray-50 hover:text-blue-600 transition-colors">AI Trainer</a>
+                    </div>
+                </div>
+
+                <a id="reg-link-nav-desktop" href="https://forms.gle/iezwx7m8ZKWaCaZb7" target="_blank" rel="noopener noreferrer" class="bg-amber-500 hover:bg-amber-600 text-gray-900 px-4 py-2 rounded-md font-semibold transition-all">Register Now</a>
             </div>
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
@@ -293,9 +293,16 @@
         <a href="#program-structure" class="block hover:text-amber-300 transition-colors py-2">Program Structure</a>
         <a href="#curriculum" class="block hover:text-amber-300 transition-colors py-2">Curriculum</a>
         <a href="#trainers" class="block hover:text-amber-300 transition-colors py-2">Trainers</a>
-        <a href="#faq" class="block hover:text-amber-300 transition-colors py-2">FAQ</a>
-        <!-- IMPROVED NAV CTA -->
-        <a id="reg-link-nav-mobile" href="https://forms.gle/iezwx7m8ZKWaCaZb7" target="_blank" rel="noopener noreferrer" class="block bg-gradient-yellow hover:shadow-lg text-gray-900 px-4 py-2 rounded-md font-semibold transition-all text-center mt-2">Book Your Seat Now</a>
+        <a href="#faq" class="block hover:text-amber-300 transition-colors py-2 border-b border-white/10">FAQ</a>
+        
+        <!-- Mobile Dropdown Links -->
+        <p class="text-xs font-bold text-gray-400 uppercase pt-2">Our Other Programs</p>
+        <a href="http://n8n.thelead.io/" target="_blank" class="block hover:text-amber-300 transition-colors py-1 pl-2">AI Agentic Automation</a>
+        <a href="https://vibecoding.thelead.io/" target="_blank" class="block hover:text-amber-300 transition-colors py-1 pl-2">AI Vibe Coding</a>
+        <a href="https://aiengineering.thelead.io/" target="_blank" class="block hover:text-amber-300 transition-colors py-1 pl-2">AI Engineering</a>
+        <a href="http://aitrainer.thelead.io/" target="_blank" class="block hover:text-amber-300 transition-colors py-1 pl-2">AI Trainer</a>
+        
+        <a id="reg-link-nav-mobile" href="https://forms.gle/iezwx7m8ZKWaCaZb7" target="_blank" rel="noopener noreferrer" class="block bg-amber-500 hover:bg-amber-600 text-gray-900 px-4 py-2 rounded-md font-semibold transition-all text-center mt-4">Register Now</a>
     </div>
   </nav>
 
@@ -309,21 +316,18 @@
       <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4">
         AI Train The Trainers (TTT) Program
       </h1>
-      <!-- Added Training Dates -->
+      <!-- Updated Training Dates -->
       <p class="text-base font-semibold text-amber-300 uppercase tracking-wider mb-2">
-          Next Cohort: December 19-21, 2025
+          Next Cohort: March 2026
       </p>
       <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
         Become a certified AI Trainer in one month. This program is for current HRDC-trainers, AI career switchers, and internal AI change agents.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <!-- IMPROVED HEADER CTA 1 -->
-        <a id="reg-link-header" href="https://forms.gle/iezwx7m8ZKWaCaZb7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-gradient-yellow text-gray-900 font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 hover:-translate-y-1 cta-pulse">
+        <a id="reg-link-header" href="https://forms.gle/iezwx7m8ZKWaCaZb7" target="_blank" rel="noopener noreferrer" class="inline-block w-full sm:w-auto bg-gradient-yellow text-gray-900 font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
           Book Your Seat Now
-          <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
-        <!-- IMPROVED HEADER CTA 2 -->
-        <a href="https://drive.google.com/file/d/1zvqeNh6JSrc-UvBK0tmB0Kl3aWGwq32a/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto text-white font-bold text-lg px-10 py-4 rounded-lg border border-gray-400 hover:border-white hover:bg-white hover:bg-opacity-10 transition-all transform hover:scale-105 hover:-translate-y-1">
+        <a href="https://drive.google.com/file/d/1zvqeNh6JSrc-UvBK0tmB0Kl3aWGwq32a/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto text-white font-bold text-lg px-10 py-4 rounded-lg border border-gray-400 hover:border-white hover:bg-white hover:bg-opacity-10 transition-all transform hover:scale-105">
           <i data-lucide="download" class="w-5 h-5"></i>
           Download Brochure
         </a>
@@ -386,7 +390,6 @@
                         <p class="text-gray-600 text-center sm:text-left">Founder of Supern8n, Co-founder of KAIN, and advisor to MED4IRN, with deep experience in scaling AI across industries.</p>
                     </div>
                 </div>
-                <!-- Removed Edmund Hee's section -->
             </div>
           </section>
 
@@ -463,7 +466,6 @@
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Our Previous Training Sessions</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div class="aspect-[9/16] bg-black rounded-xl shadow-lg flex items-center justify-center card-hover overflow-hidden">
-                <!-- FIXED: Replaced video with new user-provided link -->
                 <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fthelead.io%2Fvideos%2F1151620077024310%2F&show_text=false&width=267&t=0" class="w-full h-full" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
             </div>
             <div class="aspect-[9/16] bg-black rounded-xl shadow-lg flex items-center justify-center card-hover overflow-hidden">
@@ -610,13 +612,10 @@
           </p>
           <p class="text-gray-400 mb-8">Includes 3-day intensive workshop, all training materials, practicals, and 3-month support.</p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <!-- IMPROVED FOOTER CTA 1 -->
-            <a id="reg-link-footer" href="https://forms.gle/iezwx7m8ZKWaCaZb7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-gradient-yellow text-gray-900 font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105 hover:-translate-y-1">
+            <a id="reg-link-footer" href="https://forms.gle/iezwx7m8ZKWaCaZb7" target="_blank" rel="noopener noreferrer" class="inline-block w-full sm:w-auto bg-gradient-yellow text-gray-900 font-bold text-lg px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
               Book Your Seat Now
-              <i data-lucide="arrow-right" class="w-5 h-5"></i>
             </a>
-            <!-- IMPROVED FOOTER CTA 2 -->
-            <a href="https://drive.google.com/file/d/1zvqeNh6JSrc-UvBK0tmB0Kl3aWGwq32a/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto text-white font-bold text-lg px-10 py-4 rounded-lg border border-gray-400 hover:border-white hover:bg-white hover:bg-opacity-10 transition-all transform hover:scale-105 hover:-translate-y-1">
+            <a href="https://drive.google.com/file/d/1zvqeNh6JSrc-UvBK0tmB0Kl3aWGwq32a/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto text-white font-bold text-lg px-10 py-4 rounded-lg border border-gray-400 hover:border-white hover:bg-white hover:bg-opacity-10 transition-all transform hover:scale-105">
               <i data-lucide="download" class="w-5 h-5"></i>
               Download Brochure
             </a>
@@ -704,35 +703,6 @@
                 content.style.maxHeight = content.scrollHeight + 'px';
                 if (icon) icon.classList.add('rotate-180');
               }
-            });
-        }
-        
-        // --- Mobile Menu Toggle ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuButton && mobileMenu) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                // Toggle icon
-                const icon = mobileMenuButton.querySelector('i');
-                if (mobileMenu.classList.contains('hidden')) {
-                    icon.setAttribute('data-lucide', 'menu');
-                } else {
-                    icon.setAttribute('data-lucide', 'x');
-                }
-                lucide.createIcons(); // Re-render icons
-            });
-        }
-        
-        // --- Close mobile menu on link click ---
-        if (mobileMenu) {
-            mobileMenu.addEventListener('click', (e) => {
-                if (e.target.tagName === 'A') {
-                    mobileMenu.classList.add('hidden');
-                    const icon = mobileMenuButton.querySelector('i');
-                    icon.setAttribute('data-lucide', 'menu');
-                    lucide.createIcons(); // Re-render icons
-                }
             });
         }
         
